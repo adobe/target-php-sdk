@@ -1,2 +1,1 @@
 # Adobe Target PHP SDK
-
