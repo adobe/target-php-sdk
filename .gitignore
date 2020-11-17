@@ -1,0 +1,11 @@
+# CS Fixer
+.php_cs.cache
+
+# PHPStorm
+.idea/
+
+# Composer
+vendor/
+
+# PHPUnit
+.phpunit.result.cache
