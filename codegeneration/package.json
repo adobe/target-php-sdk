@@ -1,0 +1,14 @@
+{
+  "name": "php-codegenerator",
+  "version": "1.0.0",
+  "description": "Open API PHP code generation",
+  "scripts": {
+    "precodegen": "shx rm -rf ../generated && openapi-generator-cli version-manager set 4.0.1",
+    "codegen": "openapi-generator-cli generate -g php -c config.json -i ../openapi/delivery/api.yaml -o ../generated --skip-validate-spec",
+    "codegenhelp": "openapi-generator-cli config-help -g php"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.1.4",
+    "shx": "^0.3.3"
+  }
+}
