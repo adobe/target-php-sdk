@@ -9,7 +9,7 @@ vendor/
 
 # Code generation
 codegeneration/node_modules/
-generated/
+build/
 
 # PHPUnit
 .phpunit.result.cache

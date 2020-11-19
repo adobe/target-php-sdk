@@ -7,6 +7,11 @@ $ brew install composer              # Install composer
 $ composer install                   # Install dependencies
 ```
 
+### Create autoload helper
+To be able to run the tests we have to ensure that we have a generated auto-loader. To generate the auto-loader use:
+```bash
+$ composer dump-autoload
+``` 
 ### Run tests
 ```bash
 $ composer test
@@ -25,6 +30,10 @@ To be able to use `Target Open API` for code generation, we are leveraging Git s
 To import `Target Open API` as `openapi` folder please use commands:
 ```bash
 $ git subtree add --prefix openapi git@github.com:adobe/target-openapi.git main --squash
+```
+To refresh the imported subtree use this command:
+```bash
+$ git subtree pull --prefix openapi git@github.com:adobe/target-openapi.git main --squash
 ```
 
 `Open API generator` is a Java application hence the code generation process requires a few tools besides `Composer`:

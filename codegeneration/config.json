@@ -3,7 +3,5 @@
   "modelPackage": "Model",
   "invokerPackage": "Adobe\\Target\\Delivery\\v1",
   "variableNamingConvention": "camelCase",
-  "srcBasePath": "src",
-  "skipFormModel": true,
-  "apiTests": false
+  "srcBasePath": "src"
 }

@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Open API PHP code generation",
   "scripts": {
-    "precodegen": "shx rm -rf ../generated && openapi-generator-cli version-manager set 4.0.1",
-    "codegen": "openapi-generator-cli generate -g php -c config.json -i ../openapi/delivery/api.yaml -o ../generated --skip-validate-spec",
+    "clean": "shx rm -rf ../build && shx rm -rf ../generated",
+    "prepare": "shx mkdir ../generated",
+    "select-401": "openapi-generator-cli version-manager set 4.0.1",
+    "precodegen": "npm run clean && npm run prepare && npm run select-401",
+    "generate": "openapi-generator-cli generate -g php -c config.json -i ../openapi/delivery/api.yaml -o ../build --skip-validate-spec",
+    "copy-generated": "shx cp -r ../build/src ../generated/src",
+    "codegen": "npm run generate && npm run copy-generated",
     "codegenhelp": "openapi-generator-cli config-help -g php"
   },
   "devDependencies": {
