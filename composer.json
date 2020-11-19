@@ -6,18 +6,32 @@
     "authors": [],
     "autoload": {
         "psr-4": {
-            "Adobe\\Target\\": "src/"
+            "Adobe\\Target\\Delivery\\v1\\": "generated/src/",
+            "Adobe\\Target\\Edge\\Client\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adobe\\Target\\Delivery\\v1\\" : "test/",
+            "Adobe\\Target\\Edge\\Client\\" : "test/"
+        }
+    },
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2",
+        "jwadhams/json-logic-php": "^1"
     },
     "require-dev": {
         "phpunit/phpunit": "^9",
         "friendsofphp/php-cs-fixer": "^2",
         "phpstan/phpstan": "^0.12.56"
     },
-    "require": {
-        "jwadhams/json-logic-php": "^1"
-    },
     "scripts": {
+        "openapi-codegen": "cd codegeneration && npm run codegen",
+        "codegen": "composer openapi-codegen && composer format",
         "test": "phpunit tests",
         "format": "php-cs-fixer fix",
         "analyze": "phpstan analyse src tests"

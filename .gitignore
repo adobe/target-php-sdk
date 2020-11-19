@@ -7,5 +7,9 @@
 # Composer
 vendor/
 
+# Code generation
+codegeneration/node_modules/
+build/
+
 # PHPUnit
 .phpunit.result.cache
