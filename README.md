@@ -47,6 +47,14 @@ Once all the tools are installed, there is no need to invoke them directly, ever
 $ composer codegen
 ```
 
-# Gotchas
+### Gotchas
 > On Mac you might have to disable IPv6 to make composer work.
 > See https://www.maximumbuilders.my/news/trouble-shooting-on-composer-timeout
+
+## Contributing
+
+Contributions are welcomed! Read the [Contributing Guide](./.github/CONTRIBUTING.md) for more information.
+
+## Licensing
+
+This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.
