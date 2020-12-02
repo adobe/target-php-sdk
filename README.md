@@ -48,8 +48,18 @@ $ composer codegen
 ```
 
 ### Gotchas
-> On Mac you might have to disable IPv6 to make composer work.
-> See https://www.maximumbuilders.my/news/trouble-shooting-on-composer-timeout
+
+#### Composer
+
+On Mac you might have to disable IPv6 to make composer work.
+See https://www.maximumbuilders.my/news/trouble-shooting-on-composer-timeout
+
+#### Running Github Workflows on forked repositories
+
+Github Workflows don't run on forked repositories by default.
+You must enable GitHub Actions in the Actions tab of the forked repository.
+
+See more details at https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#pull-request-events-for-forked-repositories
 
 ## Contributing
 
