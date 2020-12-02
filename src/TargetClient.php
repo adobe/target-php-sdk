@@ -19,8 +19,7 @@ class TargetClient
 {
     private $deliveryApi;
 
-    public function __construct()
-    {
+    public function __construct(    )    {
         $this->deliveryApi = new DeliveryApi();
     }
 
