@@ -34,6 +34,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: xdebug
+          ini-values: max_execution_time=180
         env:
           fail-fast: true
       - name: Get composer cache directory
