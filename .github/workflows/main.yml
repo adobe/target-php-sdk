@@ -19,34 +19,34 @@ on:
       - main
 
 jobs:
-  coding-standard:
-    runs-on: ubuntu-latest
-    name: Check coding standard
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.3'
-          ini-values: max_execution_time=180
-        env:
-          fail-fast: true
-      - name: Get composer cache directory
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-      - name: Cache composer dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-
-      - name: Install dependencies
-        run: composer install --no-progress --prefer-dist --optimize-autoloader
-      - name: Run lint
-        run: composer lint
-      - name: Run static analysis
-        run: composer analyze
+#  coding-standard:
+#    runs-on: ubuntu-latest
+#    name: Check coding standard
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#      - name: Setup PHP
+#        uses: shivammathur/setup-php@v2
+#        with:
+#          php-version: '7.3'
+#          ini-values: max_execution_time=180
+#        env:
+#          fail-fast: true
+#      - name: Get composer cache directory
+#        id: composer-cache
+#        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+#      - name: Cache composer dependencies
+#        uses: actions/cache@v2
+#        with:
+#          path: ${{ steps.composer-cache.outputs.dir }}
+#          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+#          restore-keys: ${{ runner.os }}-composer-
+#      - name: Install dependencies
+#        run: composer install --no-progress --prefer-dist --optimize-autoloader
+#      - name: Run lint
+#        run: composer lint
+#      - name: Run static analysis
+#        run: composer analyze
   tests:
     runs-on: ${{ matrix.operating-system }}
     strategy:
@@ -62,7 +62,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: xdebug
-          ini-values: max_execution_time=180
+          ini-values: max_execution_time=300
         env:
           fail-fast: true
       - name: Get composer cache directory
