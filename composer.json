@@ -34,7 +34,7 @@
         "codegen": "composer openapi-codegen && composer format",
         "test": "phpunit tests",
         "format": "php-cs-fixer fix --config=.php_cs.dist --diff",
-        "lint": "php-cs-fixer fix --config=.php_cs.dist -v --dry-run --stop-on-violation",
+        "lint": "php-cs-fixer fix --config=.php_cs.dist -v --dry-run",
         "analyze": "phpstan analyse --no-interaction src tests"
     }
 }
